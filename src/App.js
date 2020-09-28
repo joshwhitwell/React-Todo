@@ -44,7 +44,7 @@ class App extends React.Component {
   }
 
   toggleHandler = (id) => {
-    this.setState({...this.state, toDoList: this.state.toDoList.map(todo => todo.id === id ? {...todo, completed: true} : todo)})
+    this.setState({...this.state, toDoList: this.state.toDoList.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo)})
   }
 
   render() {

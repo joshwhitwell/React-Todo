@@ -2,8 +2,13 @@ import React from 'react'
 
 function Todo(props) {
     const { toDo, toggleHandler } = props
+
+    const toDoStyles = {
+        textDecoration: toDo.completed ? 'line-through' : 'none'
+    }
+
     return (
-        <li onClick={() => {toggleHandler(toDo.id)}}>
+        <li style={toDoStyles} onClick={() => {toggleHandler(toDo.id)}}>
             {toDo.todo}
         </li>
     )
