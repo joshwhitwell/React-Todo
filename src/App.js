@@ -43,12 +43,17 @@ class App extends React.Component {
     this.setState({...this.State, toDoList: filtered})
   }
 
+  toggleHandler = (id) => {
+    this.setState({...this.state, toDoList: this.state.toDoList.map(todo => todo.id === id ? {...todo, completed: true} : todo)})
+  }
+
   render() {
     return (
       <div>
         <h2>To-Do List</h2>
         <TodoList 
-          toDoList={this.state.toDoList} 
+          toDoList={this.state.toDoList}
+          toggleHandler={this.toggleHandler}
         />
         <TodoForm 
           submitHandler={this.submitHandler} 
