@@ -1,7 +1,7 @@
 import React from 'react'
 
 function TodoForm(props) {
-    const { changeHandler, submitHandler, inputValue } = props
+    const { changeHandler, submitHandler, inputValue, clearHandler } = props
     return (
         <div>
             <form>
@@ -12,6 +12,7 @@ function TodoForm(props) {
                     value={inputValue}  
                 />
                 <button onClick={submitHandler}>Submit</button>
+                <button onClick={clearHandler}>Clear</button>
             </form>
         </div>
     )

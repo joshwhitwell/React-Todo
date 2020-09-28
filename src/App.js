@@ -37,6 +37,12 @@ class App extends React.Component {
     })
   }
 
+  clearHandler = (e) => {
+    e.preventDefault()
+    let filtered = [...this.state.toDoList].filter(todo => todo.completed === false)
+    this.setState({...this.State, toDoList: filtered})
+  }
+
   render() {
     return (
       <div>
@@ -47,7 +53,8 @@ class App extends React.Component {
         <TodoForm 
           submitHandler={this.submitHandler} 
           changeHandler={this.changeHandler}
-          inputValue={this.state.inputValue} 
+          inputValue={this.state.inputValue}
+          clearHandler={this.clearHandler} 
         />
       </div>
     );
